@@ -1,15 +1,19 @@
 import json
+import os
 
 
 def load_data(filepath):
     with open(filepath, 'r', encoding="utf-8") as file_handler:
-		return json.load(file_handler)
+        return json.load(file_handler)
 
 
 def pretty_print_json(data):
-	for json_unit in data:
-		pprint.pprint(json_unit)
+    print(json.dumps(data, indent=4, sort_keys=True))
 
 
 if __name__ == '__main__':
-    pass
+    print('Enter filepath for json file : ')
+    filepath = str(input())
+    if not filepath:
+        print('Try again : ')
+    pretty_print_json(load_data(filepath))
