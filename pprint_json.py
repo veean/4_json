@@ -12,8 +12,10 @@ def pretty_print_json(data):
 
 
 if __name__ == '__main__':
-    print('Enter filepath for json file : ')
-    filepath = str(input())
-    if not filepath:
-        print('Try again : ')
-    pretty_print_json(load_data(filepath))
+        while True:
+        filepath = input('Enter filepath for json file : ')
+        if not filepath:
+            print('Try again : ')
+        else:
+            pretty_print_json(load_data(filepath))
+            break
