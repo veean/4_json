@@ -17,5 +17,9 @@ if __name__ == '__main__':
         if not filepath:
             print('Try again!')
         else:
-            pretty_print_json(load_data(filepath))
-            break
+            try:
+                pretty_print_json(load_data(filepath))
+                break
+            except IOError as e:
+                print("Try better : %s" % (e.args[1]))
+
